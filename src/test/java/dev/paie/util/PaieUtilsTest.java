@@ -12,7 +12,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class PaieUtilsTest {
 
 	private ClassPathXmlApplicationContext context;
-
 	private PaieUtils paieUtils;
 
 	@Before
