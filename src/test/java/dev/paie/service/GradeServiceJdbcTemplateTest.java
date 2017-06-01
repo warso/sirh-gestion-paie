@@ -39,7 +39,7 @@ public class GradeServiceJdbcTemplateTest {
 		nouveauGrade.setId(id);
 		nouveauGrade.setCode(UUID.randomUUID().toString());
 		nouveauGrade.setNbHeuresBase(new BigDecimal("151.67"));
-		nouveauGrade.setTauxBase(new BigDecimal("11.0984"));
+		nouveauGrade.setTauxBase(new BigDecimal("11.010"));
 
 		gradeService.sauvegarder(nouveauGrade);
 
