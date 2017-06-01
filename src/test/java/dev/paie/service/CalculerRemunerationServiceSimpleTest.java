@@ -1,6 +1,7 @@
 package dev.paie.service;
 
 import static org.hamcrest.CoreMatchers.equalTo;
+
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
@@ -32,7 +33,6 @@ public class CalculerRemunerationServiceSimpleTest {
 	
 	@Test
 	public void test_calculer() {
-
 
 		ResultatCalculRemuneration resultat = remunerationService.calculer(bulletin1);
 
