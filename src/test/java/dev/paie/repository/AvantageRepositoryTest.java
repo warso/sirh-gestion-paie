@@ -2,7 +2,7 @@ package dev.paie.repository;
 
 
 import java.math.BigDecimal;
-import java.util.Random;
+
 import java.util.UUID;
 
 import org.junit.Test;

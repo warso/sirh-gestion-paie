@@ -34,9 +34,8 @@ public class GradeServiceJdbcTemplateTest {
 	public void test_sauvegarder_lister_mettre_a_jour() {
 
 		// Sauvegarde
-		Integer id = new Random().nextInt();
+	
 		Grade nouveauGrade = new Grade();
-		nouveauGrade.setId(id);
 		nouveauGrade.setCode(UUID.randomUUID().toString());
 		nouveauGrade.setNbHeuresBase(new BigDecimal("151.67"));
 		nouveauGrade.setTauxBase(new BigDecimal("11.010"));
@@ -46,7 +45,7 @@ public class GradeServiceJdbcTemplateTest {
 		// Lister
 
 		List<Grade> listeGradesApresSauvegarde = gradeService.lister();
-		assertTrue(listeGradesApresSauvegarde.stream().anyMatch(g -> g.getId().equals(id)));
+		assertTrue(listeGradesApresSauvegarde.stream().anyMatch(g -> g.getCode().equals(nouveauGrade.getCode())));
 
 		// Modification
 		Grade gradeAModifie = listeGradesApresSauvegarde.get(0);

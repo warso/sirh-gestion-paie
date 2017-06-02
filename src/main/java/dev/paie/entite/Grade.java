@@ -30,8 +30,8 @@ public class Grade {
 		super();
 	}
 
-	public Grade(int id, String code, BigDecimal nbHeuresBase, BigDecimal tauxBase) {
-		this.id = id;
+	public Grade(String code, BigDecimal nbHeuresBase, BigDecimal tauxBase) {
+		
 		this.code = code;
 		this.nbHeuresBase = nbHeuresBase;
 		this.tauxBase = tauxBase;

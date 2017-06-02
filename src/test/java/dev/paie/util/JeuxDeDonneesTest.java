@@ -25,6 +25,7 @@ public class JeuxDeDonneesTest {
 	public void onSetup() {
 		context = new ClassPathXmlApplicationContext("jdd-config.xml");
 		bulletin1 = context.getBean("bulletin1", BulletinSalaire.class);
+		
 	}
 
 	@Test

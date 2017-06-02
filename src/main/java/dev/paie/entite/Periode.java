@@ -14,8 +14,18 @@ import javax.persistence.Table;
 @Table(name = "periode")
 public class Periode {
 
+	public Periode() {
+		super();
+	}
+
+	public Periode(LocalDate dateDebut, LocalDate dateFin) {
+		super();
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+	}
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	@Column(name = "dateDebut")
@@ -23,7 +33,6 @@ public class Periode {
 
 	@Column(name = "dateFin")
 	private LocalDate dateFin;
-	
 
 	public LocalDate getDateDebut() {
 		return dateDebut;

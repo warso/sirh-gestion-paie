@@ -14,8 +14,7 @@ import dev.paie.entite.Grade;
 @Service
 public class GradeServiceJdbcTemplate implements GradeService {
 
-	public static final RowMapper<Grade> GRADEMAPPER = (rs, rowNum) -> new Grade(rs.getInt("id"), rs.getString("code"),
-			rs.getBigDecimal("nbHeuresBase"), rs.getBigDecimal("tauxbase"));
+	public static final RowMapper<Grade> GRADEMAPPER = (rs, rowNum) -> new Grade(rs.getString("code"),	rs.getBigDecimal("nbHeuresBase"), rs.getBigDecimal("tauxbase"));
 
 	private JdbcTemplate jdbcTemplate;
 
