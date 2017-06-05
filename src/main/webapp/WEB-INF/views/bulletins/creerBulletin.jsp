@@ -21,46 +21,22 @@
 	<a href="../logs/statistiques" class="btn btn-lg btn-primary"><span
 		class="glyphicon glyphicon-list"></span> Bulletin</a>
 
-	<form:form method="post modelAttribute="employe" class="form-horizontal">
+	<form class="form-horizontal">
 		<fieldset>
 
 			<!-- Form Name -->
 			<legend>
-				<h1 align="center">Ajouter un Employé</h1>
+				<h1 align="center">Créer un Bulletin</h1>
 			</legend>
-
-			<!-- Input Matricule -->
-			<div class="form-group">
-				<label class="col-md-4 control-label" for="textinput">Matricule</label>
-				<div class="col-md-4">
-					<input id="textinput" name="textinput" type="text" placeholder=""
-						class="form-control input-md">
-				</div>
-			</div>
-
-
-			<!-- Select Entreprise -->
-			<div class="form-group">
-				<label class="col-md-4 control-label" for="selectbasic">Entreprise</label>
-				<div class="col-md-4">
-
-					<select id="selectbasic" name="selectbasic" class="form-control">
-						<c:forEach var="entreprise" items="${entreprise}">
-							<option value="${entreprise.denomination}">${entreprise.denomination}</option>
-						</c:forEach>
-					</select>
-
-				</div>
-			</div>
 
 			<!-- Select Profil -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="selectbasic">Profil</label>
+				<label class="col-md-4 control-label" for="selectbasic">Période</label>
 				<div class="col-md-4">
 
 					<select id="selectbasic" name="selectbasic" class="form-control">
-						<c:forEach var="profil" items="${profil}">
-							<option value="${profil.code}">${profil.code}</option>
+						<c:forEach var="periode" items="${periode}">
+							<option value="${periode.id}">${periode.dateDebut}  -  ${periode.dateFin}</option>
 						</c:forEach>
 					</select>
 
@@ -69,15 +45,24 @@
 
 			<!-- Select Grade -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="selectbasic">Grade</label>
+				<label class="col-md-4 control-label" for="selectbasic">Matricule</label>
 				<div class="col-md-4">
 
 					<select id="selectbasic" name="selectbasic" class="form-control">
-						<c:forEach var="grade" items="${grade}">
-							<option value="${grade.code}">${grade.code}</option>
+						<c:forEach var="remun" items="${remun}">
+							<option value="${remun.matricule}">${remun.matricule}</option>
 						</c:forEach>
 					</select>
 
+				</div>
+			</div>
+
+			<!-- Input Periode -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="textinput">Prime exceptionnelle</label>
+				<div class="col-md-4">
+					<input id="textinput" name="textinput" type="text" placeholder=""
+						class="form-control input-md">
 				</div>
 			</div>
 
@@ -86,12 +71,12 @@
 				<label class="col-md-4 control-label" for="singlebutton"></label>
 				<div class="col-md-4">
 					<button id="singlebutton" name="singlebutton"
-						class="btn btn-primary">Ajouter</button>
+						class="btn btn-primary">Créer</button>
 				</div>
 			</div>
 
 		</fieldset>
-	</form:form>
+	</form>
 
 </body>
 </html>
