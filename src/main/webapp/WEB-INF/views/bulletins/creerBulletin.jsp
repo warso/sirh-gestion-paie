@@ -28,6 +28,8 @@
 			<legend>
 				<h1 align="center">Créer un Bulletin</h1>
 			</legend>
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
 
 			<!-- Select Profil -->
 			<div class="form-group">

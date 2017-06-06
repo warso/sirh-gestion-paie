@@ -45,11 +45,12 @@
 		<tbody>
 			<c:forEach var="bulletins" items="${bulletins}">
 				<td>${bulletins.dateForm()}</td>
-				<td>${bulletins.periode.dateDebut} - ${bulletins.periode.dateFin}</td>
+				<td>${bulletins.periode.dateDebut}-
+					${bulletins.periode.dateFin}</td>
 				<td>${bulletins.remunerationEmploye.matricule}</td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>${calcul.get(bulletins.id-1).salaireBrut}</td>
+				<td>${calcul.get(bulletins.id-1).netImposable}</td>
+				<td>${calcul.get(bulletins.id-1).netAPayer}</td>
 			</c:forEach>
 		</tbody>
 	</table>

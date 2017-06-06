@@ -28,7 +28,8 @@
 			<legend>
 				<h1 align="center">Ajouter un Employé</h1>
 			</legend>
-
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
 			<!-- Input Matricule -->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="textinput">Matricule</label>

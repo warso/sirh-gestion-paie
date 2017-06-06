@@ -3,10 +3,9 @@ package dev.paie.web.controller;
 import java.time.ZonedDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,8 +29,10 @@ public class RemunerationEmployeController {
 	EntrepriseRepository entreRep;
 	@Autowired
 	RemunerationEmployeRepository remunEmpRep;
+	
 
 	@RequestMapping(method = RequestMethod.GET, path = "/creer")
+	@Secured("ROLE_ADMINISTRATEUR")
 	public ModelAndView creerEmploye() {
 
 		ModelAndView mv = new ModelAndView();
@@ -44,6 +45,7 @@ public class RemunerationEmployeController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET, path = "/lister")
+	@Secured({"ROLE_ADMINISTRATEUR","ROLE_ADMINISTRATEUR"})
 	public ModelAndView listerEmploye() {
 
 		ModelAndView mv = new ModelAndView();
@@ -64,7 +66,6 @@ public class RemunerationEmployeController {
 		remnum.setProfilRemuneration(profilRep.findOne(profil));
 		remnum.setGrade(gradeRep.findOne(grade));
 		remunEmpRep.saveAndFlush(remnum);
-		
 		return "redirect:/mvc/employes/lister";
 	}
 

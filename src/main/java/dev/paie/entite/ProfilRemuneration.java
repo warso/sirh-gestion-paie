@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,19 +25,19 @@ public class ProfilRemuneration {
 	@Column(name = "code")
 	private String code;
 
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "CotisationNonImposable", joinColumns = @JoinColumn(name = "Profilremnonimp_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "cotisation_id", referencedColumnName = "id"))
 	private List<Cotisation> cotisationsNonImposables;
-	@ManyToMany
+
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "CotisationImposable", joinColumns = @JoinColumn(name = "Profilremimp_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "cotisation_id", referencedColumnName = "id"))
 	private List<Cotisation> cotisationsImposables;
 
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "profilRemun_cotisationImpo", joinColumns = {
 			@JoinColumn(name = "profilRemun_id", referencedColumnName = "id") }, inverseJoinColumns = {
 					@JoinColumn(name = "cotisation_id", referencedColumnName = "id") })
 	private List<Avantage> avantages;
-
 
 	public Integer getId() {
 		return id;

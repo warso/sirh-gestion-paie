@@ -19,7 +19,7 @@ import dev.paie.service.InitialiserDonneesService;
 @EnableWebMvc
 @ComponentScan("dev.paie.web.controller")
 @ImportResource({"classpath:cotisations-non-imposables.xml","classpath:cotisations-imposables.xml","classpath:entreprises.xml", "classpath:grades.xml", "classpath:profils-remuneration.xml"} )
-@Import(ServicesConfig.class)
+@Import({ServicesConfig.class, SecurityConfig.class})
 
 
 public class WebAppConfig {
