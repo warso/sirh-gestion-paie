@@ -16,34 +16,40 @@
 
 <body>
 
-	<a href="./lister" class="btn btn-lg btn-primary"><span
+	<a href="../employes/lister" class="btn btn-lg btn-primary"><span
 		class="glyphicon glyphicon-user"></span> Employés</a>
-	<a href="../bulletins/lister" class="btn btn-lg btn-primary"><span
+	<a href="./lister" class="btn btn-lg btn-primary"><span
 		class="glyphicon glyphicon-list"></span> Bulletins</a>
 
 
-	<h1>Listes des employés</h1>
+	<h1>Listes des bulletins</h1>
 
 	<a href="./creer" class="btn btn-lg btn-primary"><span
 		class="glyphicon glyphicon-user" align="right"></span> Ajouter un
-		employe</a>
+		bulletin</a>
 	<br>
 	<br>
 
 
 	<table class="table table-bordered">
 
-		<thead align="center">
+		<thead>
 			<td>Date/heure creation</td>
+			<td>Periode</td>
 			<td>Matricule</td>
-			<td>Grade</td>
+			<td>Salaire Brut</td>
+			<td>Net Imposable</td>
+			<td>Net à payer</td>
 		</thead>
 
-		<tbody align="center">
-			<c:forEach var="employes" items="${employes}">
-				<td>${employes.dateForm()}</td>
-				<td>${employes.matricule}</td>
-				<td>${employes.grade.code}</td>
+		<tbody>
+			<c:forEach var="bulletins" items="${bulletins}">
+				<td>${bulletins.dateForm()}</td>
+				<td>${bulletins.periode.dateDebut} - ${bulletins.periode.dateFin}</td>
+				<td>${bulletins.remunerationEmploye.matricule}</td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</c:forEach>
 		</tbody>
 	</table>

@@ -16,12 +16,12 @@
 
 <body>
 
-	<a href="../logs/statistiques" class="btn btn-lg btn-primary"><span
+	<a href="./lister" class="btn btn-lg btn-primary"><span
 		class="glyphicon glyphicon-user"></span> Employés</a>
-	<a href="../logs/statistiques" class="btn btn-lg btn-primary"><span
-		class="glyphicon glyphicon-list"></span> Bulletin</a>
+	<a href="../bulletins/lister" class="btn btn-lg btn-primary"><span
+		class="glyphicon glyphicon-list"></span> Bulletins</a>
 
-	<form:form method="post modelAttribute="employe" class="form-horizontal">
+	<form method="post" class="form-horizontal">
 		<fieldset>
 
 			<!-- Form Name -->
@@ -33,7 +33,7 @@
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="textinput">Matricule</label>
 				<div class="col-md-4">
-					<input id="textinput" name="textinput" type="text" placeholder=""
+					<input id="textinput" name="matricule" type="text" placeholder=""
 						class="form-control input-md">
 				</div>
 			</div>
@@ -44,9 +44,9 @@
 				<label class="col-md-4 control-label" for="selectbasic">Entreprise</label>
 				<div class="col-md-4">
 
-					<select id="selectbasic" name="selectbasic" class="form-control">
+					<select id="selectbasic" name="entreprise" class="form-control">
 						<c:forEach var="entreprise" items="${entreprise}">
-							<option value="${entreprise.denomination}">${entreprise.denomination}</option>
+							<option value="${entreprise.id}">${entreprise.denomination}</option>
 						</c:forEach>
 					</select>
 
@@ -58,9 +58,9 @@
 				<label class="col-md-4 control-label" for="selectbasic">Profil</label>
 				<div class="col-md-4">
 
-					<select id="selectbasic" name="selectbasic" class="form-control">
+					<select id="selectbasic" name="profil" class="form-control">
 						<c:forEach var="profil" items="${profil}">
-							<option value="${profil.code}">${profil.code}</option>
+							<option value="${profil.id}">${profil.code}</option>
 						</c:forEach>
 					</select>
 
@@ -72,9 +72,9 @@
 				<label class="col-md-4 control-label" for="selectbasic">Grade</label>
 				<div class="col-md-4">
 
-					<select id="selectbasic" name="selectbasic" class="form-control">
+					<select id="selectbasic" name="grade" class="form-control">
 						<c:forEach var="grade" items="${grade}">
-							<option value="${grade.code}">${grade.code}</option>
+							<option value="${grade.id}">${grade.code}</option>
 						</c:forEach>
 					</select>
 
@@ -91,7 +91,7 @@
 			</div>
 
 		</fieldset>
-	</form:form>
+	</form>
 
 </body>
 </html>

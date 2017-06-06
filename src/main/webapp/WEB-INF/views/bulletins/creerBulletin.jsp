@@ -16,12 +16,12 @@
 
 <body>
 
-	<a href="../logs/statistiques" class="btn btn-lg btn-primary"><span
+	<a href="../employes/lister" class="btn btn-lg btn-primary"><span
 		class="glyphicon glyphicon-user"></span> Employés</a>
-	<a href="../logs/statistiques" class="btn btn-lg btn-primary"><span
-		class="glyphicon glyphicon-list"></span> Bulletin</a>
+	<a href="./lister" class="btn btn-lg btn-primary"><span
+		class="glyphicon glyphicon-list"></span> Bulletins</a>
 
-	<form class="form-horizontal">
+	<form method="post" class="form-horizontal">
 		<fieldset>
 
 			<!-- Form Name -->
@@ -34,9 +34,10 @@
 				<label class="col-md-4 control-label" for="selectbasic">Période</label>
 				<div class="col-md-4">
 
-					<select id="selectbasic" name="selectbasic" class="form-control">
+					<select id="selectbasic" name="periode" class="form-control">
 						<c:forEach var="periode" items="${periode}">
-							<option value="${periode.id}">${periode.dateDebut}  -  ${periode.dateFin}</option>
+							<option value="${periode.id}">${periode.dateDebut}-
+								${periode.dateFin}</option>
 						</c:forEach>
 					</select>
 
@@ -48,9 +49,9 @@
 				<label class="col-md-4 control-label" for="selectbasic">Matricule</label>
 				<div class="col-md-4">
 
-					<select id="selectbasic" name="selectbasic" class="form-control">
+					<select id="selectbasic" name="matricule" class="form-control">
 						<c:forEach var="remun" items="${remun}">
-							<option value="${remun.matricule}">${remun.matricule}</option>
+							<option value="${remun.id}">${remun.matricule}</option>
 						</c:forEach>
 					</select>
 
@@ -59,9 +60,10 @@
 
 			<!-- Input Periode -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="textinput">Prime exceptionnelle</label>
+				<label class="col-md-4 control-label" for="textinput">Prime
+					exceptionnelle</label>
 				<div class="col-md-4">
-					<input id="textinput" name="textinput" type="text" placeholder=""
+					<input id="textinput" name="prime" type="text" placeholder=""
 						class="form-control input-md">
 				</div>
 			</div>
